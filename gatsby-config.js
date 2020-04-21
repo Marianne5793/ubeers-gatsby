@@ -18,6 +18,7 @@ module.exports = {
         },
       },
     },
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -45,6 +46,7 @@ module.exports = {
         fonts: [`average`, `prata\:400,700`],
       },
     },
+
     {
       resolve: `gatsby-plugin-alias-imports`,
       options: {
@@ -57,9 +59,20 @@ module.exports = {
           '@static': path.resolve(__dirname, 'static/'),
         },
       },
+    },
+    {
+      resolve: `gatsby-source-ghost`,
+      options: {
+        apiUrl: `http://localhost:2368`,
+        contentApiKey: `20a58f65f71c4dff31fad8053b`,
+        version: `v3` // Ghost API version, optional, defaults to "v3".
+                      // Pass in "v2" if your Ghost install is not on 3.0 yet!!!
+
+      }
     }
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
